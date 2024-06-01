@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   so_long.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: feljourb <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: feljourb <feljourb@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/26 20:18:52 by feljourb          #+#    #+#             */
-/*   Updated: 2024/05/29 02:26:15 by feljourb         ###   ########.fr       */
+/*   Updated: 2024/06/01 18:44:35 by feljourb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,17 @@
 # include <fcntl.h> 
 # include <string.h>
 # include "Gnl/get_next_line.h"
+
+typedef struct s_map
+{
+    char **map;
+    int player_x;
+    int player_y;
+    int exit_x;
+    int exit_y;
+    int collones;
+    int lignes;
+} t_map;
 
 void	ft_error(void);
 char	*f_strjoin(char *s1, char *s2);

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   checks1.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: feljourb <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: feljourb <feljourb@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/29 01:49:42 by feljourb          #+#    #+#             */
-/*   Updated: 2024/05/29 02:15:51 by feljourb         ###   ########.fr       */
+/*   Updated: 2024/06/01 18:19:54 by feljourb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,5 +66,5 @@ void	check_murs(char *str)
 		i++;
 	}
 	check_f_l_indice_murs(spl); //first && last indice
-	free_spl(spl);
+	//free_spl(spl);
 }
