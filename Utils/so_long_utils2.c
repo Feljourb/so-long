@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   so_long_utils2.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: feljourb <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: feljourb <feljourb@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/28 16:57:38 by feljourb          #+#    #+#             */
-/*   Updated: 2024/05/29 01:26:40 by feljourb         ###   ########.fr       */
+/*   Updated: 2024/06/01 21:09:25 by feljourb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,7 +54,7 @@ char	*free_splite(char **s, int i)
 	return (NULL);
 }
 
-char	*f_strdup(const char *s1)
+char	*f_strdup(char *s1)
 {
 	size_t	len;
 	char	*ptr;

@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: feljourb <marvin@42.fr>                    +#+  +:+       +#+         #
+#    By: feljourb <feljourb@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/05/26 20:18:39 by feljourb          #+#    #+#              #
-#    Updated: 2024/05/29 02:00:32 by feljourb         ###   ########.fr        #
+#    Updated: 2024/06/03 20:08:21 by feljourb         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,7 +17,7 @@ CFLAGS = -Wall -Wextra -Werror
 
 SRCS = so_long.c Utils/so_long_utils.c Gnl/get_next_line_utils.c Gnl/get_next_line.c \
 		ft_error.c checks.c Utils/so_long_utils2.c Utils/so_long_utils3.c checks1.c \
-		
+		flood_fill.c check_all.c ft_map.c 
 
 OBJ = $(SRCS:.c=.o)
 

@@ -3,24 +3,25 @@
 /*                                                        :::      ::::::::   */
 /*   so_long_utils.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: feljourb <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: feljourb <feljourb@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/26 23:13:52 by feljourb          #+#    #+#             */
-/*   Updated: 2024/05/29 01:25:49 by feljourb         ###   ########.fr       */
+/*   Updated: 2024/06/01 21:17:19 by feljourb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../so_long.h"
 
-// int	f_strlen(char *str)
-// {
-// 	int	i;
+unsigned int	ft_strlen(const char *str)
+{
+	int	i;
 
-// 	i = 0;
-// 	while (str[i])
-// 		i++;
-// 	return (i);
-// }
+	i = 0;
+	while (str[i])
+		i++;
+	return (i);
+}
+
 
 int	ft_strcmp(char *s1, char *s2)
 {
