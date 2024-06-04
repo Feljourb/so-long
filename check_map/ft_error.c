@@ -6,11 +6,11 @@
 /*   By: feljourb <feljourb@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/27 17:07:16 by feljourb          #+#    #+#             */
-/*   Updated: 2024/06/02 23:43:35 by feljourb         ###   ########.fr       */
+/*   Updated: 2024/06/04 11:13:59 by feljourb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "so_long.h"
+#include "../so_long.h"
 
 void	ft_error(void)
 {

@@ -1,37 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_map.c                                           :+:      :+:    :+:   */
+/*   init_map.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: feljourb <feljourb@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/01 17:34:30 by feljourb          #+#    #+#             */
-/*   Updated: 2024/06/03 20:06:36 by feljourb         ###   ########.fr       */
+/*   Updated: 2024/06/04 11:59:22 by feljourb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "so_long.h"
+#include "../so_long.h"
 
-void dimension(t_map *map_d)
+void	dimension(t_map *map_d)
 {
-	int i = 0;
+	int	i;
+
+	i = 0;
 	i = ft_strlen(map_d->map[0]);
 	map_d->cols = i;
 	i = 0;
-	while(map_d->map[i])
+	while (map_d->map[i])
 		i++;
 	map_d->rows = i;
 }
 
-void ft_map(t_map *map_first, char *str)
+void	ft_map(t_map *map_first, char *str)
 {
 	map_first->map = ft_split(str, '\n');
 	map_first->map_e = ft_split(str, '\n');
 }
 
-void count_collectible(t_map *coint)
+void	count_collectible(t_map *coint)
 {
-	int i;
+	int	i;
 	int	j;
 
 	i = 0;
@@ -39,7 +41,7 @@ void count_collectible(t_map *coint)
 	while (i < coint->rows)
 	{
 		j = 0;
-		while(j < coint->cols)
+		while (j < coint->cols)
 		{
 			if (coint->map[i][j] == 'C')
 				coint->collectible += 1;
@@ -49,31 +51,26 @@ void count_collectible(t_map *coint)
 	}
 }
 
-void init_map(t_map *map_init , char *str)
-{	
-	ft_map(map_init, str);
-	map_init->player_x = -1;
-	map_init->player_y = -1;
-	map_init->exit_x = -1;
-	map_init->exit_y = -1;
-	int i = 0;
-	int j;
-	dimension(map_init);
-	count_collectible(map_init);
-	while(i < map_init->rows)
+void	position_player_exit(t_map *map_p_e)
+{
+	int	i;
+	int	j;
+
+	i = 0;
+	while (i < map_p_e->rows)
 	{
 		j = 0;
-		while(j < map_init->cols)
+		while (j < map_p_e->cols)
 		{
-			if (map_init->map[i][j] == 'P')
+			if (map_p_e->map[i][j] == 'P')
 			{
-				map_init->player_x = i;
-				map_init->player_y = j;
+				map_p_e->player_x = i;
+				map_p_e->player_y = j;
 			}
-			else if(map_init->map[i][j] == 'E')
+			else if (map_p_e->map[i][j] == 'E')
 			{
-				map_init->exit_x = i;
-				map_init->exit_y = j;
+				map_p_e->exit_x = i;
+				map_p_e->exit_y = j;
 			}
 			j++;
 		}
@@ -81,19 +78,27 @@ void init_map(t_map *map_init , char *str)
 	}
 }
 
-void print_map(t_map *map)
+void	init_map(t_map *map_init, char *str)
 {
-	int i =0;
-	int j;
-	while(i < map->rows)
+	map_init->player_x = -1;
+	map_init->player_y = -1;
+	map_init->exit_x = -1;
+	map_init->exit_y = -1;
+	ft_map(map_init, str);
+	dimension(map_init);
+	count_collectible(map_init);
+	position_player_exit(map_init);
+}
+
+void	free_map(t_map *map)
+{
+	int	i;
+
+	i = 0;
+	while (map->map[i])
 	{
-		j = 0;
-		while (j < map->cols)
-		{
-			printf("%c", map->map[i][j]);
-			j++;
-		}
-		printf("\n");
+		free(map->map[i]);
 		i++;
 	}
+	free(map->map);
 }
