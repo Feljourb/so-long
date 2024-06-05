@@ -6,7 +6,7 @@
 /*   By: feljourb <feljourb@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/26 20:18:52 by feljourb          #+#    #+#             */
-/*   Updated: 2024/06/04 11:54:50 by feljourb         ###   ########.fr       */
+/*   Updated: 2024/06/05 13:38:43 by feljourb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,18 @@ typedef struct s_map
 	int		collectible;
 	int		collectible_trouve;
 }	t_map;
+
+typedef struct s_game
+{
+	void *mlx_ptr;
+	void *win_ptr;
+	void *img_wall;
+    void *img_player;
+    void *img_coin;
+    void *img_exit;
+	void *img_surface;
+	t_map map;
+}	t_game;
 
 //_____________checker_________________
 

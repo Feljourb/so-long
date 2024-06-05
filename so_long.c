@@ -6,18 +6,69 @@
 /*   By: feljourb <feljourb@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/26 20:18:54 by feljourb          #+#    #+#             */
-/*   Updated: 2024/06/04 11:37:49 by feljourb         ###   ########.fr       */
+/*   Updated: 2024/06/05 15:56:47 by feljourb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
 
-int	main(int ac, char **av)
+void load_img(t_game *game)
 {
-	char		*str;
-	char		*line;
-	int			fd;
-	t_map		map;
+	int hauteur;
+	int largeur;
+	game->img_player = mlx_xpm_file_to_image(game->mlx_ptr, "Xpm/player.xpm", &hauteur, &largeur);
+	game->img_coin = mlx_xpm_file_to_image(game->mlx_ptr, "Xpm/coin.xpm", &hauteur, &largeur);
+	game->img_exit = mlx_xpm_file_to_image(game->mlx_ptr, "Xpm/exit.xpm", &hauteur, &largeur);
+	game->img_wall = mlx_xpm_file_to_image(game->mlx_ptr, "Xpm/wall.xpm", &hauteur, &largeur);
+	game->img_surface = mlx_xpm_file_to_image(game->mlx_ptr, "Xpm/surface.xpm", &hauteur, &largeur);
+}
+void draw_map(t_game *game, t_map *map)
+{
+	int i;
+	int j;
+
+	i = 0;
+	while (i < map->rows)
+	{
+		j = 0;
+		while (j  < map->cols)
+		{
+			if (map->map[i][j] == 'P')
+				mlx_put_image_to_window(game->mlx_ptr, game->win_ptr, game->img_player, j * 50, i * 50);
+			else if (map->map[i][j] == 'E')
+				mlx_put_image_to_window(game->mlx_ptr, game->win_ptr, game->img_exit, j * 50, i * 50);
+			else if (map->map[i][j] == '1')
+				mlx_put_image_to_window(game->mlx_ptr, game->win_ptr, game->img_wall, j * 50, i * 50);
+			else if (map->map[i][j] == 'C')
+				mlx_put_image_to_window(game->mlx_ptr, game->win_ptr, game->img_coin, j * 50, i * 50);
+			else if (map->map[i][j] == '0')
+				mlx_put_image_to_window(game->mlx_ptr, game->win_ptr, game->img_surface, j * 50, i * 50);
+			j++;
+		}
+		i++;
+	}
+}
+
+void init_game(t_game *game, t_map *map)
+{
+	game->mlx_ptr = mlx_init();
+	if (!game->mlx_ptr)
+		perror("Error");
+	game->win_ptr = mlx_new_window(game->mlx_ptr, 700, 300, "so_long");
+	if (!game->win_ptr)
+		perror("Error");
+	load_img(game);
+	draw_map(game, map);
+	mlx_loop(game->mlx_ptr);
+}
+
+int main(int ac, char **av)
+{
+	char *str;
+	char *line;
+	int fd;
+	t_map map;
+	t_game game;
 
 	str = ft_strdup("");
 	line = ft_strdup("");
@@ -31,16 +82,10 @@ int	main(int ac, char **av)
 	{
 		line = get_next_line(fd);
 		if (!line)
-			break ;
+			break;
 		str = f_strjoin(str, line);
+		free(line);
 	}
-	close(fd);
 	check_all(&map, str);
-	// void *mlx_ptr = mlx_init();
-	// if(!mlx_ptr)
-	// 	perror("error");
-	// void *win_ptr = mlx_new_window(mlx_ptr, 700,500, "so_long");
-	// if(!win_ptr)
-	// 	perror("error");
-	// mlx_loop(mlx_ptr);
+	init_game(&game, &map);
 }
