@@ -6,7 +6,7 @@
 /*   By: feljourb <feljourb@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/26 20:18:52 by feljourb          #+#    #+#             */
-/*   Updated: 2024/06/05 13:38:43 by feljourb         ###   ########.fr       */
+/*   Updated: 2024/06/06 15:36:45 by feljourb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,12 @@
 # include <string.h>
 # include "minilibx-linux/mlx.h"
 # include "get_next_line/get_next_line.h"
+
+#define ESC_KEY 65307
+#define KEY_W 13 // Touche 'w'
+#define KEY_A 0  // Touche 'a'
+#define KEY_S 1  // Touche 's'
+#define KEY_D 2  // Touche 'd'
 
 typedef struct s_map
 {
