@@ -6,7 +6,7 @@
 /*   By: feljourb <feljourb@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/29 01:49:42 by feljourb          #+#    #+#             */
-/*   Updated: 2024/06/04 11:42:28 by feljourb         ###   ########.fr       */
+/*   Updated: 2024/07/11 10:00:46 by feljourb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ void	check_rectangulaire(char *str)
 			if (first_line == 0)
 				first_line = count_line;
 			else if (first_line != count_line)
-				ft_error();
+				ft_error(NULL, str, 4);
 			count_line = 0;
 		}
 		else
@@ -36,7 +36,7 @@ void	check_rectangulaire(char *str)
 		i++;
 	}
 	if (first_line != count_line)
-		ft_error();
+		ft_error(NULL, str, 4);
 }
 
 void	check_first_last_indice(t_map *map_murs)
@@ -48,16 +48,16 @@ void	check_first_last_indice(t_map *map_murs)
 	while (map_murs->map[i] != NULL)
 	{
 		len = ft_strlen(map_murs->map[i]);
-		if (map_murs->map[i][0] != '1' && map_murs->map[i][len - 1] != '1')
-			ft_error();
+		if (map_murs->map[i][0] != '1' || map_murs->map[i][len - 1] != '1')
+			ft_error(map_murs, NULL, 5);
 		i++;
 	}
 }
 
 void	check_murs(t_map *map_murs)
 {
-	int		i;
-	int		last_index;
+	int	i;
+	int	last_index;
 
 	last_index = 0;
 	while (map_murs->map[last_index] != NULL)
@@ -67,14 +67,14 @@ void	check_murs(t_map *map_murs)
 	while (map_murs->map[0][i] != '\0')
 	{
 		if (map_murs->map[0][i] != '1')
-			ft_error();
+			ft_error(map_murs, NULL, 5);
 		i++;
 	}
 	i = 0;
 	while (map_murs->map[last_index][i] != '\0')
 	{
 		if (map_murs->map[last_index][i] != '1')
-			ft_error();
+			ft_error(map_murs, NULL, 5);
 		i++;
 	}
 	check_first_last_indice(map_murs);

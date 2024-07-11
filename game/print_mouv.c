@@ -1,25 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   check_all.c                                        :+:      :+:    :+:   */
+/*   print_mouv.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: feljourb <feljourb@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/06/02 13:05:53 by feljourb          #+#    #+#             */
-/*   Updated: 2024/07/11 20:23:03 by feljourb         ###   ########.fr       */
+/*   Created: 2024/07/11 21:08:09 by feljourb          #+#    #+#             */
+/*   Updated: 2024/07/11 21:08:54 by feljourb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../so_long.h"
 
-void	check_all(t_map *map, char *str)
+void	print_mouv(t_game *game)
 {
-	check_caractere(str);
-	check_rectangulaire(str);
-	ckeck_p_e_c(str);
-	init_map(map, str);
-	if (str)
-		free(str);
-	check_murs(map);
-	chemin_valide(map);
+	printf(" mouvement : %d\n", game->map.mouv_count);
 }

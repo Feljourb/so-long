@@ -1,32 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   print_map.c                                        :+:      :+:    :+:   */
+/*   free_map.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: feljourb <feljourb@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/06/04 11:21:21 by feljourb          #+#    #+#             */
-/*   Updated: 2024/06/04 11:23:10 by feljourb         ###   ########.fr       */
+/*   Created: 2024/07/11 16:18:04 by feljourb          #+#    #+#             */
+/*   Updated: 2024/07/11 20:48:42 by feljourb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../so_long.h"
 
-void	print_map(t_map *map)
+void	free_map(char **map)
 {
 	int	i;
-	int	j;
 
 	i = 0;
-	while (i < map->rows)
+	while (map[i])
 	{
-		j = 0;
-		while (j < map->cols)
-		{
-			printf("%c", map->map[i][j]);
-			j++;
-		}
-		printf("\n");
+		free(map[i]);
 		i++;
 	}
+	free(map);
+}
+
+void	cleaning_map(t_map *map)
+{
+	free_map(map->map);
+	free_map(map->map_e);
 }

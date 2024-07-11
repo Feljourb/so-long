@@ -6,7 +6,7 @@
 /*   By: feljourb <feljourb@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/01 17:34:30 by feljourb          #+#    #+#             */
-/*   Updated: 2024/06/05 13:36:08 by feljourb         ###   ########.fr       */
+/*   Updated: 2024/07/11 16:19:01 by feljourb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,11 @@ void	dimension(t_map *map_d)
 {
 	int	i;
 
-	i = 0;
+	if (!map_d->map || !map_d->map[0])
+	{
+		fprintf(stderr, "Error: Invalid map data.\n");
+		exit(1);
+	}
 	i = ft_strlen(map_d->map[0]);
 	map_d->cols = i;
 	i = 0;
@@ -84,21 +88,9 @@ void	init_map(t_map *map_init, char *str)
 	map_init->player_y = -1;
 	map_init->exit_x = -1;
 	map_init->exit_y = -1;
+	map_init->mouv_count = 0;
 	ft_map(map_init, str);
 	dimension(map_init);
 	count_collectible(map_init);
 	position_player_exit(map_init);
-}
-
-void	free_map(t_map *map)
-{
-	int	i;
-
-	i = 0;
-	while (map->map[i])
-	{
-		free(map->map[i]);
-		i++;
-	}
-	free(map->map);
 }
