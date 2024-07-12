@@ -6,7 +6,7 @@
 /*   By: feljourb <feljourb@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/26 20:18:54 by feljourb          #+#    #+#             */
-/*   Updated: 2024/07/11 20:49:27 by feljourb         ###   ########.fr       */
+/*   Updated: 2024/07/12 14:42:53 by feljourb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ int	main(int ac, char **av)
 	t_game	game;
 
 	if (ac != 2)
-		ft_error(&map, NULL, 0);
+		ft_error(NULL, NULL, 0);
 	check_name(av[1]);
 	fd = open(av[1], O_RDONLY);
 	if (fd == -1)

@@ -6,7 +6,7 @@
 /*   By: feljourb <feljourb@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/11 20:45:54 by feljourb          #+#    #+#             */
-/*   Updated: 2024/07/11 21:04:49 by feljourb         ###   ########.fr       */
+/*   Updated: 2024/07/12 14:42:05 by feljourb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	init_game(t_game *game, t_map *map)
 {
-	game->map = *map; // Assurez-vous que la carte est bien copiée dans le jeu.
+	game->map = *map;
 	game->mlx_ptr = mlx_init();
 	game->win_ptr = mlx_new_window(game->mlx_ptr, map->cols * 50, map->rows
 			* 50, "so_long");

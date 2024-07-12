@@ -6,7 +6,7 @@
 /*   By: feljourb <feljourb@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/01 17:34:30 by feljourb          #+#    #+#             */
-/*   Updated: 2024/07/11 16:19:01 by feljourb         ###   ########.fr       */
+/*   Updated: 2024/07/12 11:47:20 by feljourb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,11 +16,6 @@ void	dimension(t_map *map_d)
 {
 	int	i;
 
-	if (!map_d->map || !map_d->map[0])
-	{
-		fprintf(stderr, "Error: Invalid map data.\n");
-		exit(1);
-	}
 	i = ft_strlen(map_d->map[0]);
 	map_d->cols = i;
 	i = 0;
