@@ -6,7 +6,7 @@
 /*   By: feljourb <feljourb@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/26 20:18:54 by feljourb          #+#    #+#             */
-/*   Updated: 2024/07/12 14:42:53 by feljourb         ###   ########.fr       */
+/*   Updated: 2024/07/13 11:38:55 by feljourb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ int	main(int ac, char **av)
 	check_name(av[1]);
 	fd = open(av[1], O_RDONLY);
 	if (fd == -1)
-		ft_error(&map, NULL, -1);
+		ft_error(NULL, NULL, -1);
 	str = ft_strdup("");
 	while (1)
 	{
