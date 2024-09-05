@@ -6,7 +6,7 @@
 /*   By: feljourb <feljourb@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/26 20:18:52 by feljourb          #+#    #+#             */
-/*   Updated: 2024/09/05 14:01:45 by feljourb         ###   ########.fr       */
+/*   Updated: 2024/09/05 14:07:30 by feljourb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 # define SO_LONG_H
 
 # include "get_next_line/get_next_line.h"
-# include "minilibix/mlx.h"
+# include "m_minilbx/mlx.h"
 # include <fcntl.h>
 # include <stdio.h>
 # include <string.h>
