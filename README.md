@@ -55,38 +55,38 @@ La bibliothèque **MiniLibX** est un outil fourni par 42 pour créer des interfa
 ## Structure du projet
 Le projet est organisé de la manière suivante :
     ```bash
-    so_long/
-    │── so_long.c    // Point d'entrée du programme
-    │── check_map/   // Lecture et validation de la carte
-    │── game/        // Gestion des mouvements et interactions
-    │
-    ├── include/
-    │   └── so_long.h      // Fichier header principal
-    ├── Xpm/               // Contient les images pour le rendu graphique
-    ├── Maps/              // Cartes au format `.ber`
-    ├── Makefile           // Fichier de compilation
-    └── README.md          // Documentation
+	so_long/
+	│── so_long.c    // Point d'entrée du programme
+	│── check_map/   // Lecture et validation de la carte
+	│── game/        // Gestion des mouvements et interactions
+	│
+	├── include/
+	│   └── so_long.h      // Fichier header principal
+	├── Xpm/               // Contient les images pour le rendu 	graphique
+	├── Maps/              // Cartes au format `.ber`
+	├── Makefile           // Fichier de compilation
+	└── README.md          // Documentation
 
 ## Étapes pour Compiler et Lancer le Jeu
 1. **Compilation** :
 
-- Compiler le projet avec Makefile :
+ - Compiler le projet avec Makefile :
     ```bash
     make
 2. **Exécution** :
 
-- Lancer le programme avec une carte .ber :
+ - Lancer le programme avec une carte .ber :
     ```bash
     ./so_long Maps/map1.ber
 3. **Contrôles** :
 
-- **Touches pour jouer** :
+ - **Touches pour jouer** :
  - `W` : Haut.
  - `A` : Gauche.
  - `S` : Bas.
  - `D` : Droite.
 
-- **Quitter le jeu** :
+ - **Quitter le jeu** :
 	- Appuyer sur la touche ESC ou fermer la fenêtre.
 ## Algorithme de Validation de Carte
 Pour garantir que la carte est jouable, un algorithme de type flood fill est utilisé. Cet algorithme vérifie :
