@@ -84,10 +84,10 @@ so_long/
 3. **Contrôles** :
 
  - **Touches pour jouer** :
-  - `W` : Haut.
-  - `A` : Gauche.
-  - `S` : Bas.
-  - `D` : Droite.
+   - `W` : Haut.
+   - `A` : Gauche.
+   - `S` : Bas.
+   - `D` : Droite.
 
  - **Quitter le jeu** :
 	- Appuyer sur la touche ESC ou fermer la fenêtre.
