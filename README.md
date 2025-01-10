@@ -53,19 +53,22 @@ La bibliothèque **MiniLibX** est un outil fourni par 42 pour créer des interfa
 	- Mémoire insuffisante ou fuite de mémoire.
 
 ## Structure du projet
+
 Le projet est organisé de la manière suivante :
-    ```bash
-	so_long/
-	│── so_long.c    // Point d'entrée du programme
-	│── check_map/   // Lecture et validation de la carte
-	│── game/        // Gestion des mouvements et interactions
-	│
-	├── include/
-	│   └── so_long.h      // Fichier header principal
-	├── Xpm/               // Contient les images pour le rendu 	graphique
-	├── Maps/              // Cartes au format `.ber`
-	├── Makefile           // Fichier de compilation
-	└── README.md          // Documentation
+
+```bash
+so_long/
+│── so_long.c       // Point d'entrée du programme
+│── check_map/      // Dossier pour la lecture et validation de la carte
+│── game/           // Dossier pour la gestion des mouvements et interactions
+│
+├── include/        // Contient les fichiers header
+│   └── so_long.h        // Fichier header principal
+├── Xpm/            // Contient les images pour le rendu graphique
+├── Maps/           // Contient les cartes au format `.ber`
+├── Makefile        // Fichier de compilation
+└── README.md       // Documentation
+
 
 ## Étapes pour Compiler et Lancer le Jeu
 1. **Compilation** :
