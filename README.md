@@ -68,7 +68,7 @@ so_long/
 ├── Maps/           // Contient les cartes au format `.ber`
 ├── Makefile        // Fichier de compilation
 └── README.md       // Documentation
-
+```
 
 ## Étapes pour Compiler et Lancer le Jeu
 1. **Compilation** :
